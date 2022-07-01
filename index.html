@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anastasiia`s weather project</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" />
+  </head>
+  <body>
+      <div class="alert alert-primary" role="alert">
+          Check the weather here and now <button type="button" class="btn btn-primary" id="current-location-button">Current</button>
+        </div></div>
+      <div class="container">
+        <h1 id="city">
+          Kharkiv
+        </h1>
+        <div class="currentCity">
+          
+          <h3 id="date"></h3>
+        </div>
+        <h3>Temperature: <span id="temperature"></span> °C</h3>
+       <h4>⛅</h4>
+       <h3>Humidity: <span id="humidity"></span> %</h3>
+       <h3>Wind: <span id="wind"></span> km/h</h3>
+       <h3><span id="description"></span></h3>
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-8">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-4">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+          </div>
+        </form>
+        <div>
+<span class="weekDays">
+                 <table>
+                <tbody>
+                    <tr><th>Monday</th></tr>
+                    <tr> <th>Tuesday</th></tr>
+                    <tr> <th>Wednesday</th></tr>
+                    <tr> <th>Thurday</th></tr>
+                    <tr> <th>Friday</th></tr>
+                    <tr> <th>Saturday</th></tr>
+                    <tr> <th>Sunday</th></tr>
+                </tbody>
+              </table>
+           
+            </span>
+      <script src="src/index.js"></script>
+  </body>
+</html>

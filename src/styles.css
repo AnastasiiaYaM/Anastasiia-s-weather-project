@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  background: rgb(184, 218, 255);
+  font-size: 30px;
+}
+h1 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-size: 66px;
+}
+input {
+  display: block center;
+  margin: 0;
+}
+
+.weekDays {
+  display: block center;
+  font-style: normal;
+}
+.search-form {
+  display: block center;
+  margin: 10px;
+}
+.alert alert-primary {
+  font-style: normal;
+  font-size: 20px;
+}
