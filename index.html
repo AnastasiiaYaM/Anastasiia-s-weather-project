@@ -10,31 +10,36 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-      <div class="alert alert-primary" role="alert">
-          Check the weather here and now <button type="button" class="btn btn-primary" id="current-location-button">Current</button>
-        </div></div>
-      <div class="container">
-        <h1 id="city">
-          Kharkiv
-        </h1>
+    <div class="container">
+      <div class="weather-app">
+        <div class="alert alert-primary" role="alert">
+          Check the weather here and now
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="current-location-button"
+          >
+            Current
+          </button>
+        </div>
+        <h1 id="city">Kharkiv</h1>
         <div class="currentCity">
-          
           <h3 id="date"></h3>
         </div>
-        <h3>Temperature: <span id="temperature"></span> 
+        <h3>
+          Temperature: <span id="temperature"></span>
           <span class="units">
-                  <a href="#" id="celsius-link">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a>
-                </span>
+            <a href="#" id="celsius-link" class="active">°C</a> |
+            <a href="#" id="fahrenheit-link">°F</a>
+          </span>
         </h3>
-       <h4><img src="" alt="Clear" id="icon" />
-    </h4>
-       <h3>Humidity: <span id="humidity"></span> %</h3>
-       <h3>Wind: <span id="wind"></span> km/h</h3>
-       <h3><span id="description"></span></h3>
+        <h4><img src="" alt="Clear" id="icon" /></h4>
+        <h3>Humidity: <span id="humidity"></span> %</h3>
+        <h3>Wind: <span id="wind"></span> km/h</h3>
+        <h3><span id="description"></span></h3>
         <form class="search-form" id="search-form">
           <div class="row">
             <div class="col-8">
@@ -56,22 +61,42 @@
             </div>
           </div>
         </form>
-        <div>
-<span class="weekDays">
-                 <table>
-                <tbody>
-                    <tr><th>Monday</th></tr>
-                    <tr> <th>Tuesday</th></tr>
-                    <tr> <th>Wednesday</th></tr>
-                    <tr> <th>Thurday</th></tr>
-                    <tr> <th>Friday</th></tr>
-                    <tr> <th>Saturday</th></tr>
-                    <tr> <th>Sunday</th></tr>
-                </tbody>
-              </table>
-           
-            </span>
-            <p><a href="https://github.com/AnastasiiaYaM/Anastasiia-s-weather-project">Open-source code</a> by Anastasiia Melenevych</p>
-      <script src="script.js"></script>
+        <span class="weekDays">
+          <table>
+            <tbody>
+              <tr>
+                <th>Monday</th>
+              </tr>
+              <tr>
+                <th>Tuesday</th>
+              </tr>
+              <tr>
+                <th>Wednesday</th>
+              </tr>
+              <tr>
+                <th>Thurday</th>
+              </tr>
+              <tr>
+                <th>Friday</th>
+              </tr>
+              <tr>
+                <th>Saturday</th>
+              </tr>
+              <tr>
+                <th>Sunday</th>
+              </tr>
+            </tbody>
+          </table>
+        </span>
+      </div>
+      <small
+        ><a href="https://github.com/AnastasiiaYaM/Anastasiia-s-weather-project"
+          >Open-source code</a
+        >
+        by Anastasiia Melenevych</small
+      >
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

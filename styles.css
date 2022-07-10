@@ -15,6 +15,12 @@ input {
   margin: 0;
 }
 
+.weather-app {
+  padding: 20px;
+  border: 2px solid #27223d;
+  border-radius: 10px;
+}
+
 .weekDays {
   display: block center;
   font-style: normal;
