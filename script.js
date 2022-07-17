@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestemp) {
+  let date = new Date(timestemp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -37,16 +38,13 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
             <div class="col-12">
-              <div class="weather-forecast-date">${formatDay(
-                forecastDay.dt
-              )}</div>
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
                              <img
                  src="http://openweathermap.org/img/wn/${
                    forecastDay.weather[0].icon
@@ -71,7 +69,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -157,5 +155,3 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
-
-search("Kharkiv");
