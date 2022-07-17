@@ -1,5 +1,5 @@
-function formatDate(timestemp) {
-  let date = new Date(timestemp);
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -8,8 +8,6 @@ function formatDate(timestemp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -19,13 +17,12 @@ function formatDate(timestemp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[dayIndex];
-
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 
-function formatDay(timestemp) {
-  let date = new Date(timestemp * 1000);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -38,19 +35,22 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
+  let forecastDay = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       forecastHTML =
         forecastHTML +
         `
             <div class="col-12">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+              <div class="weather-forecast-date">${formatDay(
+                forecastDay.dt
+              )}</div>
                              <img
                  src="http://openweathermap.org/img/wn/${
                    forecastDay.weather[0].icon
                  }@2x.png" 
                  alt="" 
-                 width="42"
+                 width="52"
                 />
                 <div class="weather-forecast-temperatures">
                   <span class="weather-forecast-temperatures-max"> ${Math.round(
@@ -94,7 +94,7 @@ function displayWeatherCondition(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  getForecast(response.date.coord);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
